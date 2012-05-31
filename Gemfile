@@ -7,7 +7,7 @@ group :darwin do
   gem "growl"
 end
 
-group :development do
+group :tools do
   gem "guard"
   gem "guard-rspec"
   gem "guard-cucumber"
