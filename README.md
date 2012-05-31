@@ -7,6 +7,8 @@ rubycas-client gem for production.
 
 Ruby library for talking to CAS Servers
 
+[![Build Status](https://secure.travis-ci.org/rubycas/rubycas-client-core.png?branch=master)](http://travis-ci.org/rubycas/rubycas-client-core)
+
 ## Installation
 
 Add this line to your application's Gemfile:
