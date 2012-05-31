@@ -21,8 +21,4 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency("cucumber", "~> 1.2.0")
   gem.add_development_dependency("appraisal", "~> 0.4.1")
   gem.add_development_dependency("yard", "~> 0.8.1")
-  gem.add_development_dependency("guard", "~> 1.0.3")
-  gem.add_development_dependency("guard-rspec", "~> 0.7.3")
-  gem.add_development_dependency("guard-cucumber", "~> 0.8.0")
-  gem.add_development_dependency("guard-bundler", "~> 0.1.3")
 end

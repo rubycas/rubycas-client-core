@@ -6,3 +6,10 @@ gemspec
 group :darwin do
   gem "growl"
 end
+
+group :development do
+  gem "guard"
+  gem "guard-rspec"
+  gem "guard-cucumber"
+  gem "guard-bundler"
+end
