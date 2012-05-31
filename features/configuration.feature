@@ -3,20 +3,20 @@ Feature: the rubycas client allows you to configure it through various methods
   Scenario Outline: Minimal configuration via ruby hash with defaults
     Given A config hash containing:
       | key | value |
-      | cas_base_url | http://cas-server.local/cas |
-    When I initialize the rubycas client
+      | cas_base_url | https://cas-server.local/cas |
+    When I initialize RubyCas::Client
     Then I expect the configuration for "<key>" to equal "<value>":
 
     Scenarios: Required Config Parameters
       | key | value |
-      | cas_base_url | http://cas-server.local/cas |
+      | cas_base_url | https://cas-server.local/cas |
 
     Scenarios: CAS Server Parameters
       | key | value |
-      | login_url | http://cas-server.local/cas/login |
-      | logout_url | http://cas-server.local/cas/logout |
-      | service_validate_url | http://cas-server.local/cas/serviceValidate |
-      | proxy_validate_url | http://cas-server.local/cas/proxyValidate |
+      | login_url | https://cas-server.local/cas/login |
+      | logout_url | https://cas-server.local/cas/logout |
+      | service_validate_url | https://cas-server.local/cas/serviceValidate |
+      | proxy_validate_url | https://cas-server.local/cas/proxyValidate |
       | cas_destination_logout_param_name | destination |
 
     Scenarios: CAS Client Parameters

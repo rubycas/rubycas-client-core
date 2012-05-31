@@ -6,8 +6,8 @@ def normalize_config_value(value)
   end
 end
 
-Given /^A config hash containing:$/ do |table|
-  @config = {}
+def table_to_config_hash(table)
+  config = {}
   table.map_column!('key') do |k|
     k.to_sym
   end
@@ -15,14 +15,19 @@ Given /^A config hash containing:$/ do |table|
     normalize_config_value(v)
   end
   table.hashes.each do |h|
-    @config[h[:key]] = h[:value]
+    config[h[:key]] = h[:value]
   end
+  config
 end
 
-When /^I initialize the rubycas client$/ do
-  @client = RubyCAS::Client.new(@config)
+Given /^A config hash containing:$/ do |table|
+  @config = table_to_config_hash(table)
+end
+
+When /^I initialize RubyCas::Client$/ do
+  @client = RubyCas::Client.new(@config)
 end
 
 Then /^I expect the configuration for "(.*?)" to equal "(.*?)":$/ do |key, value|
-  @client.send(key.to_sym).should == normalize_config_value(value)
+  @client.config.send(key.to_sym).should == normalize_config_value(value)
 end
